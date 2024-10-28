@@ -1,9 +1,7 @@
-# Импорт модуля sys для доступа к системным параметрам и функциям, он необходим для передачи аргументов в PyQt приложение
 import sys
-
-# Импорт модуля os для взаимодействия с операционной системой, особенно для работы с файловыми операциями
 import os
 
+from PyQt6.QtGui import QIcon
 # Импорт необходимых классов из библиотеки PyQt6 для создания GUI приложения
 from PyQt6.QtWidgets import (
     QApplication,  # Основной класс для создания PyQt приложения
@@ -20,16 +18,15 @@ from PyQt6.QtWidgets import (
     QMessageBox    # Класс для создания всплывающих сообщений
 )
 
-# Импорт класса QtCore чтобы использовать его функциональность, в т.ч. константы
-from PyQt6.QtCore import Qt
-
 # Определение класса основного окна приложения, наследуемого от QMainWindow
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()  # Вызов конструктора родительского класса QMainWindow
 
         # Задание заголовка окна
-        self.setWindowTitle("PyQt6 Application")
+        self.setWindowTitle("Приложение для ПЗ4")
+        # self.setWindowIcon(QIcon('editing.png')) пока эта строчка не работает
+        self.setStyleSheet("background-color:#B0C4DE;")
 
         # Установка начальной геометрии окна (позиция и размер)
         self.setGeometry(100, 100, 800, 600)
